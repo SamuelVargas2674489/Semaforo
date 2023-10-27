@@ -24,7 +24,6 @@ void loop() {
   int lectura3 = digitalRead(pinEntrada3);
   int lectura4 = digitalRead(pinEntrada4);
 
-  // Muestra los valores en el monitor serie
   Serial.print("Entrada 1: ");
   Serial.println(lectura1);
   Serial.print("Entrada 2: ");
@@ -34,7 +33,6 @@ void loop() {
   Serial.print("Entrada 4: ");
   Serial.println(lectura4);
 
-  // Establece las salidas en función de las entradas
   digitalWrite(pinSalida1, lectura1);
   digitalWrite(pinSalida2, lectura2);
   digitalWrite(pinSalida3, lectura3);
