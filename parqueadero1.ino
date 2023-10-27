@@ -22,27 +22,27 @@ void loop()
   if (digitalRead (ENTRADA)==HIGH)
   {
     delay(800);
-    Serial.println (numero);
-    Serial.println (RECAUDO);
     numero=numero+1;
   }
   if (digitalRead (SALIDA)==HIGH)
   {
     delay(500);
     numero=numero-1;
-    Serial.println (numero);
-    Serial.println (RECAUDO);
     RECAUDO=RECAUDO+5000;
   }
+  Serial.println (numero);
+    Serial.println (RECAUDO);
   if (numero>=10)
   {
     digitalWrite(7, HIGH);
     digitalWrite(5, LOW);
     numero=10;
   }
-  if (numero<=10)
+  if (numero<=0)
   {
     digitalWrite(7, LOW);
     digitalWrite(5, HIGH);
+    numero=0;
+    RECAUDO=0;
   }
   }
