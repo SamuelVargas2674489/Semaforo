@@ -1,11 +1,12 @@
 // 2674489, Microcontroladores, Samuel Vargas y Jean Paul Rodriguez
 int Cupos_parqueadero;
-int numero=1;
+int numero=0;
 int ENTRADA=4;
 int SALIDA=3;
 int SUMA=0;
 int RESTA;
-float RECAUDO=0;
+float valorrecaudo=0;
+float RECAUDO=valorrecaudo;
 void setup()
 {
   Serial.begin(9600);
@@ -31,18 +32,18 @@ void loop()
     RECAUDO=RECAUDO+5000;
   }
   Serial.println (numero);
-    Serial.println (RECAUDO);
+  Serial.println (RECAUDO);
   if (numero>=10)
   {
     digitalWrite(7, HIGH);
     digitalWrite(5, LOW);
     numero=10;
   }
-  if (numero<=0)
+  if (numero<0)
   {
     digitalWrite(7, LOW);
     digitalWrite(5, HIGH);
     numero=0;
-    RECAUDO=0;
+    RECAUDO=RECAUDO-5000;
   }
   }
