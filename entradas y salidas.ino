@@ -1,41 +1,129 @@
-const int pinEntrada1 = 11;
-const int pinEntrada2 = 10;
-const int pinEntrada3 = 9;
-const int pinEntrada4 = 8;
+int S1=11,S2=10, S3=9, S4=8 ;
+int L1=7, L2=6 , L3=5;
+bool A , B , C , D;
+void setup()
+{
+  pinMode( L1, OUTPUT);
+  pinMode( L2, OUTPUT);
+  pinMode( L3, OUTPUT);
+  
+  pinMode( S1,INPUT);
+  pinMode( S2,INPUT);
+  pinMode( S3,INPUT);
+  pinMode( S4,INPUT);
 
-const int pinSalida1 = 5;
-const int pinSalida2 = 6;
-const int pinSalida3 = 7;
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(pinEntrada1, INPUT);
-  pinMode(pinEntrada2, INPUT);
-  pinMode(pinEntrada3, INPUT);
-  pinMode(pinEntrada4, INPUT);
-  pinMode(pinSalida1, OUTPUT);
-  pinMode(pinSalida2, OUTPUT);
-  pinMode(pinSalida3, OUTPUT);
 }
+void loop()
+{
+  A= digitalRead(S1);
+  B= digitalRead(S2);
+  C= digitalRead(S3);
+  D= digitalRead(S4);
+  
+ if( A==0 && B==0 &&C==1 && D==1)
+ {
+ digitalWrite( L1,LOW);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,LOW);
+ 
+ }
+  
+   if ( A==0 && B==0 && C==0 && D==1)
+  {
+ digitalWrite( L1,HIGH);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,LOW);
+  }
+  
+    if ( A==0 && B==0 && C==1 && D==0)
+  {
+ digitalWrite( L1,HIGH);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,LOW);
+  }
 
-void loop() {
-  int lectura1 = digitalRead(pinEntrada1);
-  int lectura2 = digitalRead(pinEntrada2);
-  int lectura3 = digitalRead(pinEntrada3);
-  int lectura4 = digitalRead(pinEntrada4);
+  
+ if ( A==0 && B==0 && C==0 && D==0)
+  {
+ digitalWrite( L1,LOW);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,HIGH);
+  }
 
-  Serial.print("Entrada 1: ");
-  Serial.println(lectura1);
-  Serial.print("Entrada 2: ");
-  Serial.println(lectura2);
-  Serial.print("Entrada 3: ");
-  Serial.println(lectura3);
-  Serial.print("Entrada 4: ");
-  Serial.println(lectura4);
+  if ( A==0 && B==1 && C==1 && D==1)
+  {
+ digitalWrite( L1,HIGH);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,LOW);
+  }
 
-  digitalWrite(pinSalida1, lectura1);
-  digitalWrite(pinSalida2, lectura2);
-  digitalWrite(pinSalida3, lectura3);
-
-  delay(1000);
+if ( A==0 && B==1 && C==1 && D==0)
+  {
+ digitalWrite( L1,LOW);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,HIGH);
+  }
+  if ( A==0 && B==1 && C==0 && D==1)
+  {
+ digitalWrite( L1,LOW);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,HIGH);
+  }
+if ( A==0 && B==1 && C==0 && D==0)
+  {
+ digitalWrite( L1,HIGH);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,HIGH);
+  }
+  if ( A==1 && B==0 && C==1 && D==1)
+  {
+ digitalWrite( L1,LOW);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,LOW);
+  }
+if ( A==1 && B==0 && C==1 && D==0)
+  {
+ digitalWrite( L1,LOW);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,HIGH);
+  }
+  if ( A==1 && B==0 && C==0 && D==1)
+  {
+ digitalWrite( L1,LOW);
+ digitalWrite( L2,LOW);
+    digitalWrite( L3,HIGH);
+  }
+    
+  
+    if ( A==1 && B==0 && C==0 && D==0)
+  {
+ digitalWrite( L1,HIGH);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,HIGH);
+  }
+    if ( A==1 && B==1 && C==1 && D==1)
+  {
+ digitalWrite( L1,LOW);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,HIGH);
+  }
+    if ( A==1 && B==1 && C==1 && D==0)
+  {
+ digitalWrite( L1,HIGH);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,HIGH); }
+      if ( A==1 && B==1 && C==0 && D==1)
+  {
+ digitalWrite( L1,HIGH);
+ digitalWrite( L2,LOW);
+ digitalWrite( L3,HIGH);
+  }
+      if ( A==1 && B==1 && C==0 && D==0)
+  {
+ digitalWrite( L1,HIGH);
+ digitalWrite( L2,HIGH);
+ digitalWrite( L3,HIGH);
+  }
+ 
+  
 }
