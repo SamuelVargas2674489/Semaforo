@@ -41,9 +41,12 @@ void loop()
   }
   if (numero<0)
   {
-    digitalWrite(7, LOW);
-    digitalWrite(5, HIGH);
     numero=0;
     RECAUDO=RECAUDO-5000;
+  }
+  if (numero==0)
+  {
+    digitalWrite(7, LOW);
+    digitalWrite(5, HIGH);
   }
   }
