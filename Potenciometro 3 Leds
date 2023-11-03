@@ -1,0 +1,71 @@
+//JEAN POUL RODRIGUEZ // SAMUEL VARGAS
+//FICHA: 2674489
+void setup() {
+  
+  Serial.begin(115200);
+  pinMode(D3,OUTPUT);
+  pinMode(D2,OUTPUT);
+  pinMode(D4,OUTPUT);
+}
+
+void loop() {
+ 
+  int sensorValue = analogRead(A0);
+  float voltage = (sensorValue / 1023.0) * 5.0;
+  Serial.print("Voltaje: ");
+  Serial.print(voltage, 2); 
+  Serial.println(" V");
+  delay(100); 
+
+
+if(voltage<=0.49 && voltage>=0.00)
+      {
+        digitalWrite(D4,LOW);
+         digitalWrite(D3,HIGH);
+         digitalWrite(D2,HIGH);
+        {delay(200);}
+        }
+        
+
+        else
+        {
+          digitalWrite(D4,HIGH);
+           digitalWrite(D3,LOW);
+            digitalWrite(D2,LOW);
+          
+          }
+  
+      if(voltage<=2.49 && voltage>=0.50)
+      {     
+        
+        {delay(250);}
+        digitalWrite(D4,LOW);
+   
+        }
+        else
+        {
+          digitalWrite(D4,HIGH);
+            }
+  if(voltage>=5.00) 
+  {
+     digitalWrite(D2,HIGH);
+ 
+    }
+    else{
+       digitalWrite(D2,LOW);
+
+      }
+
+
+     
+          
+  if( voltage<=4.99 && voltage>=2.50)
+  {
+    digitalWrite(D3,HIGH);
+    }  
+    else  {
+  digitalWrite(D3,LOW);
+  }
+  
+    
+}
